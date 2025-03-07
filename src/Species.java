@@ -12,11 +12,12 @@ public enum Species {
     PARROT(true, 2, false),
     HAMSTER(false, 4, true),
     TARANTULA(false, 8, false),
-    ANONYMOUS(false, 0, false);
+    ANONYMOUS(false, 0, false),
+    ROBOCAT(true, 4 , false ),;
 
-    private boolean canFly;
-    private int numberOfLegs;
-    private boolean hasFur;
+    private final boolean canFly;
+    private final int numberOfLegs;
+    private final boolean hasFur;
 
     Species(boolean canFly, int numberOfLegs, boolean hasFur) {
         this.canFly = canFly;

@@ -4,16 +4,24 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-//         after each 100 000 object, garbage collector is recommended manually
-        for (int i = 0; i <= 1000000; i++){
-            new Human("Eko", "Taghiyev", 1995);
-            if(i % 100000 == 0){
-                System.gc();
-            }
-        }
+        Fish fish = new Fish("Nemo");
+        DomestiCat cat = new DomestiCat("Mesi");
+        Dog dog = new Dog("Qazo");
+        RoboCat roboCat = new RoboCat("Ronaldo");
 
-        System.gc();
+        fish.eat();
+        fish.respond();
 
+        cat.eat();
+        cat.respond();
+        cat.foul();
+
+        dog.eat();
+        dog.respond();
+        dog.foul();
+
+        roboCat.eat();
+        roboCat.respond();
 
 //        String[][] annaSchedule = {
 //                {DayOfWeek.MONDAY.name(), "cry"} ,

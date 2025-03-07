@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.lang.ref.Cleaner;
 
-public class Pet {
+public abstract class Pet {
 
     private static final Cleaner CLEANER = Cleaner.create();
     private final Cleaner.Cleanable cleanable;
@@ -57,15 +57,10 @@ public class Pet {
     }
 
 
-    public void eat(){System.out.println("I am eating...");}
+    public void eat(){System.out.println("I am devouring smth...");}
 
-    public void respond() {
-        System.out.println("Hello, owner. I am " + this.nickname + ". I miss you!");
-    }
+    public abstract void respond();
 
-    public void foul() {
-        System.out.println("I need to cover it up");
-    }
 
     // Setters
     public void setSpecies(Species species) {
