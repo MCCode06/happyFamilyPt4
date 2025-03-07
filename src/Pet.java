@@ -36,19 +36,14 @@ public abstract class Pet {
     private int age;
     private int trickLevel;
 
-    public Pet() {
-        this.species = Species.ANONYMOUS;
-        cleanable = CLEANER.register(this, this.finalizer());
-    }
-
-    public Pet(Species species, String nickname) {
-        this.species = species;
+    public Pet(String nickname) {
+        this.species = Species.UNKNOWN; // as default
         this.nickname = nickname;
         cleanable = CLEANER.register(this, this.finalizer());
     }
 
-    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
-        this.species = species;
+    public Pet(String nickname, int age, int trickLevel, String[] habits) {
+        this.species = Species.UNKNOWN;
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
@@ -63,7 +58,7 @@ public abstract class Pet {
 
 
     // Setters
-    public void setSpecies(Species species) {
+    protected void setSpecies(Species species) {  // setSpecies should only be used by child classes
         this.species = species;
     }
     public void setNickname(String nickname) {

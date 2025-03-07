@@ -40,6 +40,8 @@ public class Family {
         this.mother = mother;
         this.father = father;
         this.children = new Human[0];
+        mother.setFamily(this);
+        father.setFamily(this);
         cleanable = CLEANER.register(this, this.finalizer());
 
     }

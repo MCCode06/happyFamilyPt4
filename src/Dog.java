@@ -1,11 +1,13 @@
 public class Dog extends Pet implements Foulie{
 
     public Dog(String nickname){
-        super(Species.DOG, nickname);
+        super(nickname);
+        setSpecies(Species.DOG);
     }
 
     public Dog(String nickname, int age, int tricklevel, String[] habits){
-        super(Species.DOG, nickname, age, tricklevel, habits);
+        super(nickname, age, tricklevel, habits);
+        setSpecies(Species.DOG);
     }
 
     @Override

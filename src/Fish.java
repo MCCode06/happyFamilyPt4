@@ -1,11 +1,13 @@
 public class Fish extends Pet{
 
     public Fish(String nickname){
-        super(Species.FISH, nickname);
+        super(nickname);
+        setSpecies(Species.FISH);
     }
 
     public Fish(String nickname, int age, int tricklevel, String[] habits){
-        super(Species.FISH, nickname, age, tricklevel, habits);
+        super(nickname, age, tricklevel, habits);
+        setSpecies(Species.FISH);
     }
 
     @Override

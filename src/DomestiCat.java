@@ -1,11 +1,13 @@
 public class DomestiCat extends Pet implements Foulie{
 
     public DomestiCat(String nickname){
-        super(Species.CAT, nickname);
+        super(nickname);
+        setSpecies(Species.CAT);
     }
 
     public DomestiCat(String nickname, int age, int tricklevel, String[] habits){
-        super(Species.CAT, nickname, age, tricklevel, habits);
+        super(nickname, age, tricklevel, habits);
+        setSpecies(Species.CAT);
     }
 
     @Override

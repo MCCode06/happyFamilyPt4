@@ -3,11 +3,13 @@
 public class RoboCat extends Pet{
 
     public RoboCat(String nickname){
-        super(Species.ROBOCAT, nickname);
+        super(nickname);
+        setSpecies(Species.ROBOCAT);
     }
 
     public RoboCat(String nickname, int age, int tricklevel, String[] habits){
-        super(Species.ROBOCAT, nickname, age, tricklevel, habits);
+        super(nickname, age, tricklevel, habits);
+        setSpecies(Species.ROBOCAT);
     }
 
     @Override

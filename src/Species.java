@@ -12,8 +12,9 @@ public enum Species {
     PARROT(true, 2, false),
     HAMSTER(false, 4, true),
     TARANTULA(false, 8, false),
-    ANONYMOUS(false, 0, false),
-    ROBOCAT(true, 4 , false ),;
+    ROBOCAT(true, 4 , false ),
+    UNKNOWN(false, 0, false),
+    ;
 
     private final boolean canFly;
     private final int numberOfLegs;
