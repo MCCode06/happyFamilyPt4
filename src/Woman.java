@@ -1,4 +1,5 @@
 public final class Woman extends Human {
+
     public Woman(String name, String surname, int age) {
         super(name, surname, age);
     }

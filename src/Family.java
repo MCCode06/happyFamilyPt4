@@ -2,9 +2,10 @@
 import java.util.Arrays;
 import java.util.Objects;
 import java.lang.ref.Cleaner;
+import java.util.Random;
 
 
-public class Family {
+public class Family implements HumanCreator {
 
     private static final Cleaner CLEANER = Cleaner.create();
     private final Cleaner.Cleanable cleanable;
@@ -90,6 +91,26 @@ public class Family {
         }
 
         return deleteChild(children, index);
+    }
+
+    @Override
+    public Human bornChild(){
+        String[] boyNames = {"Elvin", "Qezenfer", "Ismet", "Ilkin", "Namiq", "Murad", "Ferid", "ELcan", "Covid", "Arif"};
+        String[] girlNames = { "Gunay", "Nigar", "Sema", "Fatime", "Saida", "Afruz", "Aisha", "Nazrin", "Fidan", "Aylin"};
+
+        Random random = new Random();
+        boolean isMale = random.nextBoolean();
+        int indexM = random.nextInt(boyNames.length);
+        int indexF = random.nextInt(girlNames.length);
+        String name = (isMale) ? boyNames[indexM] : girlNames[indexF];
+        String surname = father.getSurname();
+        int iq = (father.getIq() + mother.getIq()) / 2;
+        Human child = (isMale) ? new Man(name, surname, 2025, iq, null)
+                               : new Woman(name, surname, 2025, iq, null);
+        this.addChild(child);
+        child.setFamily(this);
+
+        return child;
     }
 
     public int countFamily() {
